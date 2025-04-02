@@ -5,20 +5,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '''
-    <h1>Mathematical Operations Web App</h1>
-    <form method="POST" action="/calculate">
-        <label>Select Operation:</label><br>
-        <select name="operation">
-            <option value="arith">Arithmetic</option>
-            <option value="trig">Trigonometry</option>
-            <option value="log">Logarithm</option>
-            <option value="exp">Exponentiation</option>
-            <option value="atrig">Inverse Trigonometry</option>
-        </select><br><br>
-        <input type="submit" value="Next">
-    </form>
-    '''
+    return render_template('ind.html')
+    # <h1>Mathematical Operations Web App</h1>
+    # <form method="POST" action="/calculate">
+    #     <label>Select Operation:</label><br>
+    #     <select name="operation">
+    #         <option value="arith">Arithmetic</option>
+    #         <option value="trig">Trigonometry</option>
+    #         <option value="log">Logarithm</option>
+    #         <option value="exp">Exponentiation</option>
+    #         <option value="atrig">Inverse Trigonometry</option>
+    #     </select><br><br>
+    #     <input type="submit" value="Next">
+    # </form>
+    # '''
+    
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
